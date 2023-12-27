@@ -7,7 +7,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const Register = () => {
     // using authContext
-    const {user, createUser} = useContext(AuthContext);
+    const {user, createUser, } = useContext(AuthContext);
     // console.log(user);
     const handleRegister = event => {
         event.preventDefault();
@@ -20,6 +20,7 @@ const Register = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            // setUser(loggedUser.email)
             // clear the form
             form.reset();
         })
@@ -27,6 +28,7 @@ const Register = () => {
             console.log(error.message);
         })
     }
+    
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
